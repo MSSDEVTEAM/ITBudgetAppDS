@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ITBudgetApp" Class="ITBudgetAppDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=msssqldb2019;Initial Catalog=ITBudgetApp;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ITBudgetAppConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.usp_Tracker_Update" Method="usp_Tracker_Update">
+    <Parameter Name="PreviousYearBudgeted" Parameter="previousYearBudgeted" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="CurrentYearBudgeted" Parameter="currentYearBudgeted" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="Actual" Parameter="actual" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IsNet" Parameter="isNet" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Tracker_Get" Method="usp_Tracker_Get">
+    <Parameter Name="Month" Parameter="month" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Year" Parameter="year" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CostId" Parameter="costId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CompanyId" Parameter="companyId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_Tracker_GetResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Month" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MonthName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CostId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CostName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CostCentreId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CostCentre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Company" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PreviousYearBudgetedNet" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="PreviousYearBudgetedGross" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="CurrentYearBudgetedNet" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="CurrentYearBudgetedGross" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="ActualNet" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="ActualGross" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="DifferenceNet" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="DifferenceGross" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
