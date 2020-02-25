@@ -11,11 +11,7 @@ namespace ITBudgetApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-//testshaun
-=======
 
->>>>>>> parent of c07612b... added test
         }
     }
 }
